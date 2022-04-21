@@ -1,3 +1,7 @@
+kodlama.io C# - Angular Camp Project
+
+Angular is used in the frontend of the Car Rental System.
+
 # CarRental
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
