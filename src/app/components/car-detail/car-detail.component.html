@@ -1,0 +1,40 @@
+<div *ngIf="!dataLoaded" class="text-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="dataLoaded" class="card m-3" align="center">
+  <div class="card-body">
+    <div class="m-2">
+      <img
+        *ngFor="let image of carImages"
+        src="https://localhost:44386/{{ image.imagePath }}"
+        class="m-2"
+      />
+    </div>
+
+    <div class="col-md-6 m-3">
+      <div class="card-header">
+        <h4>{{ car.brandName }} {{ car.description }}</h4>
+      </div>
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Color:</td>
+            <td>{{ car.colorName }}</td>
+          </tr>
+          <tr>
+            <td>Model Year:</td>
+            <td>{{ car.modelYear }}</td>
+          </tr>
+          <tr>
+            <td>Daily Price:</td>
+            <td>{{ car.dailyPrice }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
