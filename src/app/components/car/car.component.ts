@@ -15,6 +15,8 @@ export class CarComponent implements OnInit {
 
   dataLoaded = false;
 
+  carFilter = "";
+
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -55,5 +57,9 @@ export class CarComponent implements OnInit {
 
   getCurrentCarClass(car: Car){
     return (this.currentCar == car)  ? 'list-group-item active' : 'list-group-item';
+  }
+
+  rent(car: Car){
+    
   }
 }

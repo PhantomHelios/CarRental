@@ -1,3 +1,16 @@
+<style>
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .preview {
+    display: inline-block;
+    margin: 0 40px 0 0;
+  }
+</style>
+
 <div *ngIf="!dataLoaded" class="text-center">
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
@@ -6,12 +19,10 @@
 
 <div *ngIf="dataLoaded" class="card m-3" align="center">
   <div class="card-body">
-    <div class="m-2">
-      <img
-        *ngFor="let image of carImages"
-        src="https://localhost:44386/{{ image.imagePath }}"
-        class="m-2"
-      />
+    <div class="col-md-12 row justify-content-center">
+      <div *ngFor="let image of carImages" class="m-2 col-md-4 column" >
+        <img src="https://localhost:44386/{{ image.imagePath }}" class="m-2" />
+      </div>
     </div>
 
     <div class="col-md-6 m-3">
@@ -31,7 +42,7 @@
           </tr>
           <tr>
             <td>Daily Price:</td>
-            <td>{{ car.dailyPrice }}</td>
+            <td>{{ car.dailyPrice }} ₺</td>
           </tr>
         </tbody>
       </table>

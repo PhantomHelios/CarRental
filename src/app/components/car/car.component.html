@@ -5,6 +5,17 @@
 </div>
 
 <div *ngIf="dataLoaded" class="card" align="center">
+  <div class="mb-3">
+    <label for="carFilter" class="form-label">Search Car</label>
+    <input
+      type="text"
+      [(ngModel)]="carFilter"
+      class="form-control"
+      id="carFilter"
+      placeholder=""
+    />
+  </div>
+
   <div class="card-header">
     <h4>Cars</h4>
   </div>
@@ -22,7 +33,7 @@
       </thead>
       <tbody>
         <tr
-          *ngFor="let car of cars"
+          *ngFor="let car of cars | carPipe: carFilter"
           (click)="setCurrentCar(car)"
           routerLink="/cars/details/{{ car.carId }}"
         >
@@ -32,6 +43,7 @@
           <td>{{ car.colorName }}</td>
           <td>{{ car.modelYear }}</td>
           <td>{{ car.dailyPrice }}</td>
+          <td><button (click)="rent(car)" type="button" class="btn btn-success">Rent</button></td>
         </tr>
       </tbody>
     </table>
